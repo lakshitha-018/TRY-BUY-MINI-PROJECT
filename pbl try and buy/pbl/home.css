@@ -1,0 +1,150 @@
+/* General Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    color: #333;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: #000000; /* Black background */
+}
+
+.navbar-brand,
+.nav-link {
+    color: #ffffff !important; /* White text */
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+}
+
+/* Hero Section Styles */
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px 10%;
+}
+
+.hero-content {
+    max-width: 50%;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-top: 15px;
+}
+
+.hero-content a.btn {
+    background-color: #ff4d4d;
+    color: #fff;
+    margin-top: 20px;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.hero-content a.btn:hover {
+    background-color: #e63939;
+}
+
+.hero-image img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 15px;
+}
+
+/* Carousel Section Styles */
+
+
+/* Features Section Styles */
+.features-section {
+    padding: 50px 10%;
+    background-color: #f9f9f9;
+}
+
+.features-section h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.feature-card {
+    border: none;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    border-radius: 10px;
+}
+
+.feature-card h3 {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.feature-card p {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Contact Section */
+.contact-section {
+    background-color: #000;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.contact-section h2 {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.features-section {
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #f8f9fa, #e3f2fd); /* Aesthetic gradient background */
+    color: #333; /* Neutral dark color for text */
+    text-align: center;
+}
+
+.features-section h2 {
+    font-family: 'Dancing Script', cursive; /* Elegant font for headings */
+    font-size: 2.5rem;
+    color: #007bff; /* Accent color for section titles */
+    margin-bottom: 20px;
+}
+
+.feature-card {
+    background: #ffffff; /* White card for contrast */
+    border: 1px solid #dee2e6; /* Light border */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    padding: 20px;
+    margin: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.feature-card:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+.feature-card h3 {
+    font-size: 1.5rem;
+    color: #495057; /* Slightly darker text for cards */
+}
+
+.feature-card p {
+    font-size: 1rem;
+    color: #6c757d; /* Subtle text color for descriptions */
+}

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f0f5;
+            color: #333;
+            padding: 20px;
+        }
+        .cart-item {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between; /* Added to space out the elements */
+        }
+        .cart-item img {
+            width: 50px; /* Adjust size as needed */
+            height: 50px; /* Adjust size as needed */
+            margin-right: 10px;
+        }
+        .remove-item {
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        .remove-item:hover {
+            background-color: #c0392b;
+        }
+        .buy-now {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .buy-now:hover {
+            background-color: #1d70a2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Your Cart</h1>
+    <div id="cart-container"></div>
+    <button class="buy-now" onclick="buyNow()">Buy Now</button>
+
+    <script>
+        function loadCart() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartContainer = document.getElementById('cart-container');
+
+            if (cart.length === 0) {
+                cartContainer.innerHTML = '<p>Your cart is empty.</p>';
+                return;
+            }
+
+            cartContainer.innerHTML = ''; // Clear the container before adding items
+
+            cart.forEach((item, index) => {
+                const itemDiv = document.createElement('div');
+                itemDiv.className = 'cart-item';
+                itemDiv.innerHTML = `
+                    <img src="${item.image}" alt="${item.name}">
+                    <div>
+                        <strong>${item.name}</strong> - ${item.price}
+                    </div>
+                    <button class="remove-item" onclick="removeFromCart(${index})">Remove</button>
+                `;
+                cartContainer.appendChild(itemDiv);
+            });
+        }
+
+        function removeFromCart(index) {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.splice(index, 1); // Remove the item at the specified index
+            localStorage.setItem('cart', JSON.stringify(cart)); // Update local storage
+            loadCart(); // Reload the cart to reflect changes
+        }
+
+        function buyNow() {
+            alert('Proceeding to checkout...');
+            // Here you can redirect to a checkout page or handle the purchase
+        }
+        function buyNow() {
+            window.location.href = 'buy.html';
+        }
+
+
+        // Load the cart when the page loads
+        window.onload = loadCart;
+    </script>
+</body>
+</html>

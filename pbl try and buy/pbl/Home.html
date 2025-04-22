@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Try & Buy</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- External CSS -->
+    <link rel="stylesheet" href="home.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<style>
+    .carousel-caption {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        color: black;
+        text-align: left;
+        padding: 10px; /* Optional: Adjust spacing around the text */
+        border-radius: 0; /* Remove rounded corners if present */
+        background: none; /* Ensure no background is applied */
+    }
+
+    .login-button {
+        margin-left: auto; /* Push the button to the far right */
+    }
+</style>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Try & Buy</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#western-wear">Western Wear</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#traditional-wear">Traditional Wear</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact Us</a>
+                    </li>
+                </ul>
+                <a href="login.html" class="btn btn-outline-light login-button">Login</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Carousel Section -->
+    <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="fashion-pretty-cool-youngwith-shopping-bags-wearing-black-hat-white-pants-over-colorful-orange-background-79063329.webp" class="d-block w-100" alt="Western Wear">
+                <div class="carousel-caption">
+                    <h2>Stylish Western Wear</h2>
+                    <p>Explore the latest trends in fashion.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="trad.jpg" class="d-block w-100" alt="Traditional Wear">
+                <div class="carousel-caption">
+                    <h2>Elegant Traditional Wear</h2>
+                    <p>Find your perfect ethnic look.</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1>Welcome to Try & Buy</h1>
+            <p>Experience virtual fitting for the latest fashion trends. Explore our Western and Traditional Wear collections.</p>
+            <a href="dashboard.html" class="btn">Explore Now</a>
+        </div>
+        
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section" id="western-wear">
+        <h2>Western Wear</h2>
+        <div class="row text-center">
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <h3>Casual Dresses</h3>
+                    <p>Perfect for everyday wear with a trendy touch.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <h3>Party Wear</h3>
+                    <p>Stand out in glamorous outfits for special occasions.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <h3>Workwear</h3>
+                    <p>Professional and stylish ensembles for your workplace.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features-section" id="traditional-wear">
+        <h2>Traditional Wear</h2>
+        <div class="row text-center">
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <h3>Sarees</h3>
+                    <p>Beautifully crafted sarees for every occasion.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <h3>Lehengas</h3>
+                    <p>Perfectly designed lehengas for weddings and parties.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <h3>Kurtas</h3>
+                    <p>Comfortable and elegant kurtas for a traditional look.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <footer class="contact-section" id="contact">
+        <h2>Contact Us</h2>
+        <p>Email: support@tryandbuy.com | Phone: +123-456-7890</p>
+        <p>Follow us on social media for the latest updates!</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

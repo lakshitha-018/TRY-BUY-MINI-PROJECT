@@ -1,0 +1,138 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* General Body Styles */
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    padding: 20px;
+  }
+  
+  .category-image {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    float: left;
+    margin-right: 30px; /* Add space between image and content */
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* Header */
+  header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  h1 {
+    color: #333;
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  /* Clothing Guide Section */
+  .clothing-guide {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .category {
+    margin-bottom: 30px;
+    border-bottom: 2px solid #e4e4e4;
+    padding-bottom: 20px;
+  }
+  
+  .category h3 {
+    color: #444;
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+  }
+  
+  .category-image {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 15px;
+  }
+  
+  button.toggle-info {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button.toggle-info:hover {
+    background-color: #0056b3;
+  }
+  
+  .info {
+    display: block;
+    margin-top: 10px;
+  }
+  
+  .info p, .info ul {
+    margin-left: 20px;
+    color: #555;
+  }
+  
+  .info ul {
+    list-style-type: disc;
+  }
+  
+  .info li {
+    margin-bottom: 5px;
+  }
+  
+  /* Casual Clothing Images - Flexbox Layout */
+  .clothing-images {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .clothing-item {
+    flex: 1;
+    max-width: calc(25% - 20px); /* Adjust to make 4 items per row */
+    box-sizing: border-box;
+  }
+  
+  .clothing-item img {
+    width: 100%;
+    height: 200px;  /* Fixed height for all images */
+    object-fit: cover; /* Ensures the images cover the set area without distortion */
+    border-radius: 5px;
+  }
+  
+  /* Responsive Design for Smaller Screens */
+  @media (max-width: 768px) {
+    .clothing-item {
+      max-width: calc(50% - 20px); /* 2 items per row */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .clothing-item {
+      max-width: 100%; /* 1 item per row */
+    }
+  
+    h1 {
+      font-size: 1.5rem; /* Smaller font size for smaller screens */
+    }
+  }
+  

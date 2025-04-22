@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TRY AND BUY</title>
+  <link rel="stylesheet" href="login.css">
+</head>
+<body>
+  <div class="fullscreen-container">
+    <div class="bg-text"> <i><b>TRY AND BUY</b></i> </div>
+    <div class="login-container">
+      <h3 class="login-title" align="left"> <i> Login to your site </i> </h3>
+      <form id="loginForm">
+        <div class="input-group">
+          <input type="text" id="username" placeholder="Email or Username" required>
+        </div>
+        <div class="input-group">
+          <input type="password" id="password" placeholder="Password" required>
+        </div>
+        <button type="submit" class="login-button">Login</button>
+        <a href="forget-password.html" class="forgot-password">Forget password?</a>
+        <p class="register-link">Don't have an account? <a href="register.html">Sign up here</a></p>
+      </form>
+      <h6 align="center"> or login with </h6>
+      <div class="social-buttons">
+        <a href="https://facebook.com" class="social-btn facebook" target="_blank">Facebook</a>
+        <a href="https://accounts.google.com" class="social-btn google" target="_blank">Google</a>
+        <a href="https://linkedin.com" class="social-btn linkedin" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", function(event) {
+      event.preventDefault(); // Prevent default form submission
+
+      const username = document.getElementById("username").value.trim();
+      const password = document.getElementById("password").value.trim();
+
+      // Simulate login validation (replace with actual validation logic)
+      if (username && password) {
+        // Navigate to the home page
+        window.location.href = "Home.html"; // Replace "Home.html" with your actual home page URL
+      } else {
+        alert("Please enter both username and password.");
+      }
+    });
+  </script>
+</body>
+</html>

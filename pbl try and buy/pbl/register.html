@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Try and Buy - Registration</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: url('https://images.blocksurvey.io/cdn-cgi/imagedelivery/G6cPOuGZ4Z_bEV13gBxixw/templates/online-shopping-registration-form.png/l') no-repeat center center fixed;
+      background-size: cover;
+      font-family: Arial, sans-serif;
+      color: #fff;
+    }
+    .title {
+      text-align: center;
+      color: #E32428;
+      font-size: 48px;
+      font-weight: bold;
+      margin-top: 50px;
+    }
+    .registration-form {
+      max-width: 700px;
+      margin: 50px auto;
+      background: rgba(0, 0, 0, 0.6); /* Transparent background */
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      color: white; /* Ensure text is visible on transparent background */
+    }
+    .form-title {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 24px;
+      font-weight: bold;
+      color: #E32428; /* Highlighted title color */
+    }
+    .form-label {
+      font-weight: bold;
+    }
+    .btn-primary {
+      background-color: #E32428;
+      border: none;
+    }
+    .btn-primary:hover {
+      background-color: #ff4757;
+    }
+    .d-grid {
+      margin-top: 20px;
+    }
+    input::placeholder {
+      color: #ddd;
+    }
+  </style>
+</head>
+<body>
+  <!-- Website Title -->
+  <div class="title">Try and Buy</div>
+
+  <div class="container">
+    <form class="registration-form" id="registrationForm">
+      <h2 class="form-title">Registration</h2>
+      <div class="mb-3">
+        <label for="fullName" class="form-label">Full Name</label>
+        <input type="text" class="form-control" id="fullName" placeholder="Enter your full name" required>
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email Address</label>
+        <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" class="form-control" id="password" placeholder="Create a password" required>
+      </div>
+      <div class="mb-3">
+        <label for="phone" class="form-label">Phone Number</label>
+        <input type="tel" class="form-control" id="phone" placeholder="Enter your phone number" required>
+      </div>
+      <h5 class="mt-4">Shipping Address</h5>
+      <div class="mb-3">
+        <label for="street" class="form-label">Street Address</label>
+        <input type="text" class="form-control" id="street" placeholder="Enter your street address" required>
+      </div>
+      <div class="mb-3">
+        <label for="city" class="form-label">City</label>
+        <input type="text" class="form-control" id="city" placeholder="Enter your city" required>
+      </div>
+      <div class="mb-3">
+        <label for="state" class="form-label">State</label>
+        <input type="text" class="form-control" id="state" placeholder="Enter your state" required>
+      </div>
+      <div class="mb-3">
+        <label for="zip" class="form-label">Zip Code</label>
+        <input type="text" class="form-control" id="zip" placeholder="Enter your zip code" required>
+      </div>
+      <div class="mb-3">
+        <label for="country" class="form-label">Country</label>
+        <input type="text" class="form-control" id="country" placeholder="Enter your country" required>
+      </div>
+     
+      <div class="d-grid">
+        <button type="submit" class="btn btn-primary">Register</button>
+        <p>Already have an account? <a href="login.html">Log in here</a></p>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById("registrationForm").addEventListener("submit", function(event) {
+      event.preventDefault(); // Prevent default form submission
+      const fullName = document.getElementById("fullName").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const street = document.getElementById("street").value.trim();
+      const city = document.getElementById("city").value.trim();
+      const state = document.getElementById("state").value.trim();
+      const zip = document.getElementById("zip").value.trim();
+      const country = document.getElementById("country").value.trim();
+      
+  
+      if (!fullName || !email || !password || !phone || !street || !city || !state || !zip || !country ) {
+        alert("All fields are required!");
+        return;
+      }
+  
+      if (password.length < 6) {
+        alert("Password must be at least 6 characters long.");
+        return;
+      }
+  
+      alert("Registration successful! Welcome to Try and Buy.");
+      // Redirect to the home page
+      window.location.assign("login.html");
+ // Replace "index.html" with the actual home page URL
+    });
+  </script>
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

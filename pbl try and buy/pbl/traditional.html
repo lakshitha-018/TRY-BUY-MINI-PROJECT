@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Try and Buy</title>
+    <link rel="stylesheet" href="traditional.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to Try and Buy</h1>
+        <p>Your Virtual Trial Room</p>
+    </header>
+
+    <section class="upload-section">
+        <h2>Upload Your Photo</h2>
+        <input type="file" id="upload-photo" accept="image/*" onchange="loadImage(event)">
+        <img id="user-photo" alt="Your uploaded photo will appear here.">
+        <img id="user-photo-preview" style="display: none;">
+    </section>
+
+    <section class="catalog-section">
+        <h2>Our Traditional Collection</h2>
+        <div class="item">
+            <img src="redfrock_trad-removebg-preview.png" alt="white sweater">
+            <button class="try-on-btn" onclick="tryOnDress('redfrock_trad-removebg-preview.png')">Try On</button>
+        </div>
+        <div class="item">
+            <img src="pink_dress_trad-removebg-preview.png" alt="white sweater">
+            <button class="try-on-btn" onclick="tryOnDress('pink_dress_trad-removebg-preview.png')">Try On</button>
+        </div>
+        <div class="item">
+            <img src="grey_frock-removebg-preview.png" alt="white sweater">
+            <button class="try-on-btn" onclick="tryOnDress('grey_frock-removebg-preview.png')">Try On</button>
+        </div>
+        <div class="item">
+            <img src="green_frock_trad-removebg-preview.png" alt="white sweater">
+            <button class="try-on-btn" onclick="tryOnDress('green_frock_trad-removebg-preview.png')">Try On</button>
+        </div>
+        <div class="item">
+            <img src="lehanga-removebg-preview.png" alt="white sweater">
+            <button class="try-on-btn" onclick="tryOnDress('lehanga-removebg-preview.png')">Try On</button>
+        </div>
+        <div class="item">
+            <img src="pink_blouse-removebg-preview.png" alt="white sweater">
+            <button class="try-on-btn" onclick="tryOnDress('pink_blouse-removebg-preview.png')">Try On</button>
+        </div>
+        <div class="item">
+            <img src="multi_frock-removebg-preview.png" alt="white sweater">
+            <button class="try-on-btn" onclick="tryOnDress('multi_frock-removebg-preview.png')">Try On</button>
+        </div>
+        <div class="item">
+            <img src="lehangapink-removebg-preview.png" alt="white sweater">
+            <button class="try-on-btn" onclick="tryOnDress('lehangapink-removebg-preview.png')">Try On</button>
+        </div>
+        <div class="item">
+            <img src="purple_blouse_-removebg-preview.png" alt="white sweater">
+            <button class="try-on-btn" onclick="tryOnDress('purple_blouse_-removebg-preview.png')">Try On</button>
+        </div>
+        <div class="item">
+            <img src="white_trad_processed.jpg" alt="white sweater">
+            <button class="try-on-btn" onclick="tryOnDress('white_trad_processed.jpg')">Try On</button>
+        </div>
+        <div class="item">
+            <img src="greytrad-removebg-preview.png" alt="white sweater">
+            <button class="try-on-btn" onclick="tryOnDress('greytrad-removebg-preview.png')">Try On</button>
+        </div>
+    </section>
+
+    <section>
+        <h2>Preview</h2>
+        <canvas id="output-image" style="display: block; border: 1px solid #ccc;"></canvas>
+        <button id="download-btn" onclick="downloadResult()">Download Result</button>
+    </section>
+    <section>
+        <h2>Adjust Dress</h2>
+        <div class="slider-container">
+            <label for="width-slider">Width:</label>
+            <input type="range" id="width-slider" min="50" max="200" value="100">
+        </div>
+        <div class="slider-container">
+            <label for="height-slider">Height:</label>
+            <input type="range" id="height-slider" min="50" max="200" value="100">
+        </div>
+        <div class="slider-container">
+            <label for="x-offset-slider">X Offset:</label>
+            <input type="range" id="x-offset-slider" min="-100" max="100" value="0">
+        </div>
+        <div class="slider-container">
+            <label for="y-offset-slider">Y Offset:</label>
+            <input type="range" id="y-offset-slider" min="-100" max="100" value="0">
+        </div>
+    </section>
+    
+
+    <script>
+        function loadImage(event) {
+            const reader = new FileReader();
+            reader.onload = function () {
+                const imgElement = document.getElementById('user-photo');
+                imgElement.src = reader.result;
+                document.getElementById('user-photo-preview').src = reader.result;
+                imgElement.onload = function () {
+                    drawOnCanvas();
+                };
+            };
+            reader.readAsDataURL(event.target.files[0]);
+        }
+
+        function tryOnDress(dressSrc) {
+            const dressImg = new Image();
+            dressImg.src = dressSrc;
+            dressImg.onload = function () {
+                drawOnCanvas(dressImg);
+            };
+        }
+
+        function drawOnCanvas(dressImg = null) {
+            const canvas = document.getElementById('output-image');
+            const ctx = canvas.getContext('2d');
+            const userPhoto = document.getElementById('user-photo');
+
+            // Set canvas size to match the uploaded photo size
+            canvas.width = userPhoto.naturalWidth;
+            canvas.height = userPhoto.naturalHeight;
+
+            // Draw the user photo onto the canvas
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.drawImage(userPhoto, 0, 0, canvas.width, canvas.height);
+
+            // Draw the dress overlay onto the canvas if provided
+            if (dressImg) {
+                ctx.drawImage(dressImg, 0, 0, canvas.width, canvas.height);
+            }
+        }
+
+        function downloadResult() {
+            const canvas = document.getElementById('output-image');
+            const link = document.createElement('a');
+            link.download = 'result.png';
+            link.href = canvas.toDataURL();
+            link.click();
+        }
+    </script>
+
+    <script src="traditional.js"></script>
+</body>
+</html>

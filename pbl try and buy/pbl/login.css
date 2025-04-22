@@ -1,0 +1,145 @@
+body {
+  margin: 0;
+}
+
+.fullscreen-container {
+  background-image:url('https://media.gettyimages.com/id/1453723844/photo/dressing-room-interior-with-shoes-bags-and-hanging-clothes.jpg?s=612x612&w=0&k=20&c=LObEMql56AUQjLnBtV0OK5zKKhWDgSYztxoKCrSqBtw=');
+  min-height: 100vh;
+  width: 100vw;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bg-text {
+      position: absolute;
+      top: 70px;
+      left: 50%;  
+      transform: translate(-50%, -50%); 
+      color: white;
+      font-size: 50px;
+      font-weight:italic;
+	  FONT-WEIGHT:BOLD;
+      text-align: top;
+    }
+
+.login-container {
+  background-color:rgba(0,0,0,0.7);
+  padding: 40px;
+  width: 400px;
+  height:300px;
+  max-width: 600px;
+}
+
+.login-title {
+  color: white;
+  text-align: center;
+  margin: 0 0 20px;
+  font-size: 2.5em; 
+  font-weight: normal;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  color: white;
+  font-weight: lighter;
+  font-size: 1.2em;
+  margin-bottom: 7px;
+}
+
+.input-group input {
+  font-size: 1.2em;
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: lighter;
+ 
+}
+
+.login-button {
+  background-color:#E32428;
+  padding: 10px; 
+  border-radius: 5px; 
+  color: white;
+  font-size: 1.5em;
+  font-weight: lighter;
+  cursor: pointer;
+  margin-bottom:7px;
+  width:100%;
+}
+
+.login-button:hover{
+  background-color:pink;
+}
+.forgot-password {
+    display: block;
+    margin-top: 10px;
+    color: lightgray;
+    text-decoration: none;
+	text-align:center;
+	font-size:1.2em;
+}
+
+.forgot-password:hover {
+    color: white;
+}
+
+h6{
+	text-align:center;
+	color:white;
+	font-size:1.5em;
+	font-family:Courier New, monospace;
+}
+.social-buttons {
+    display: flex;
+    justify-content: space-around;
+	
+}
+
+.social-btn {
+    padding: 10px 15px;
+    color: white;
+    text-transform: capitalize;
+    text-decoration: none;
+	margin:20.5px;
+}
+
+.facebook {
+    background-color: rgba(0,0,0,0.7);
+}
+
+.Google {
+    background-color: rgba(0,0,0,0.7);
+}
+
+.linkedin {
+    background-color: rgba(0,0,0,0.7);
+}
+
+.social-btn:hover {
+    opacity: 0.8;
+}
+.register-link {
+  text-align: center; /* Align the text in the middle */
+  color: white; /* Set the color of the text to white */
+  font-size: 1.2em; /* Adjust the font size for better visibility */
+  margin-top: 20px; /* Add spacing above the text */
+}
+
+.register-link a {
+  color: #E32428; /* Set the color for the link to match your theme */
+  text-decoration: none; /* Remove underline from the link */
+  font-weight: bold; /* Make the link text bold */
+}
+
+.register-link a:hover {
+  color: pink; /* Add hover effect to the link */
+}
+
+	

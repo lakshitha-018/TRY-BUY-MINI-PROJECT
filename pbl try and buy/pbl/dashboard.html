@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Try and Buy Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f0f5;
+            color: #333;
+        }
+
+        .container {
+            margin: 0 auto;
+        }
+
+        header {
+            background-color: black;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            width: 96.3vw;
+            left: 0;
+            right: 0;
+            margin: 0;
+        }
+
+        .heading-title {
+            font-size: 40px;
+            margin: 20px 0;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            color: #ecf0f1;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: center;
+            background-color: #c0392b;
+            padding: 10px 0;
+            width: 100%;
+        }
+
+        .navbar a {
+            color: #ecf0f1;
+            text-decoration: none;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            margin: 0 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            background-color: black;
+        }
+
+        .main-content {
+            margin-top: 30px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .tasks, .notifications, .trending-deals, .feedback {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .tasks ul, .notifications ul, .trending-deals ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .tasks li, .notifications li, .trending-deals li {
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+				   
+			.trending-deals {
+				margin: 40px 0;
+				padding: 20px;
+				background-color: #f9f9f9;
+				border-radius: 10px;
+				box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+			}
+
+			.trending-deals h3 {
+				font-size: 24px;
+				margin-bottom: 20px;
+				color: #c0392b;
+				text-align: center;
+				font-weight: bold;
+			}
+
+			.deal-cards {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 20px;
+				justify-content: center;
+			}
+
+			.deal-card {
+				background-color: #ffffff;
+				border: 2px solid #c0392b;
+				border-radius: 10px;
+				padding: 15px 20px;
+				width: 220px;
+				box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+				transition: transform 0.3s ease, box-shadow 0.3s ease;
+				text-align: center;
+			}
+
+			.deal-card:hover {
+				transform: translateY(-10px);
+				box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+			}
+
+			.deal-card p {
+				font-size: 16px;
+				color: #333;
+				margin: 0;
+				font-weight: bold;
+			}
+
+
+        iframe {
+            border: none;
+            width: 100%;
+            height: 300px;
+            border-radius: 5px;
+        }
+
+        .feedback form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .feedback textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+            font-size: 1rem;
+            resize: none;
+        }
+
+        .feedback button {
+            align-self: flex-start;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .feedback button:hover {
+            background-color: #2980b9;
+        }
+		/* General Section Styling */
+		.section {
+			margin: 40px 0;
+			padding: 20px;
+			background-color: #f9f9f9;
+			border-radius: 10px;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+		}
+
+		.section h3 {
+			font-size: 24px;
+			margin-bottom: 20px;
+			color: #2c3e50;
+			text-align: center;
+			font-weight: bold;
+		}
+					/* General Section Styling */
+.section {
+    margin: 40px 0;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.section h3 {
+    font-size: 26px;
+    margin-bottom: 20px;
+    color: #2c3e50;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Tasks Section Styling */
+.task-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 15px;
+}
+
+.task-item {
+    background: linear-gradient(135deg, #e8f8ff, #d6eefa);
+    border-left: 5px solid #3498db;
+    border-radius: 8px;
+    padding: 20px 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.task-item:hover {
+    transform: translateX(10px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.task-icon {
+    font-size: 30px;
+    color: #1f78b4;
+    background-color: #d1ecf9;
+    padding: 10px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.task-item p {
+    margin: 0;
+    font-size: 18px;
+    color: #34495e;
+    font-weight: 600;
+    line-height: 1.6;
+}
+
+
+/* Notifications Section Styling */
+.notification-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-left: 4px solid #e67e22;
+    background-color: #fdf9f3;
+}
+
+.notification-item {
+    display: flex;
+    align-items: flex-start;
+    padding: 15px 10px;
+    border-bottom: 1px dashed #f7d6b0;
+    gap: 15px;
+}
+
+.notification-item:last-child {
+    border-bottom: none;
+}
+
+.notification-icon {
+    font-size: 20px;
+    color: #e67e22;
+    margin-top: 3px;
+}
+
+.notification-item p {
+    margin: 0;
+    font-size: 15px;
+    color: #5d3c00;
+    font-weight: 500;
+    line-height: 1.4;
+    flex: 1;
+}
+
+h3 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #e67e22;
+    padding: 10px 0;
+    border-bottom: 2px solid #f7d6b0;
+    margin-bottom: 10px;
+}
+
+
+
+.contact-us-box {
+    padding: 40px 20px;
+    margin: 50px auto;
+    max-width: 400px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.contact-us-title {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.contact-us-description {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.contact-box-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.contact-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1rem;
+    color: #555;
+}
+
+.contact-info i {
+    font-size: 1.5rem;
+    color: #f3961c;
+}
+
+.contact-form {
+    flex: 1 1 100%;
+    margin-top: 20px;
+}
+
+.contact-form .form-input {
+    width: calc(100% - 24px);
+    margin: 10px 12px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact-form .submit-button {
+    display: block;
+    margin: 20px auto 0;
+    padding: 10px 20px;
+    background: #f3961c;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.contact-form .submit-button:hover {
+    background: #e5891a;
+}
+button{
+	background-color:  #2c3e50!important;
+	color: white !important;
+	font-weight:bold;
+}
+.submit-button:hover{
+  background-color: white !important;
+  color: #2c3e50 !important;
+}
+.box {
+  width: 100% !important; 
+  max-width: 50% !important; 
+  margin: 0 auto; 
+  padding: 15px; 
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Try & Buy</h1>
+        </header>
+
+        <nav class="navbar">
+            <a href="Home.html">Home</a>
+            <a href="western.html">Western</a>
+            <a href="traditional.html">Traditional</a>
+            <a href="shopping_cart.html">Shopping</a>
+            <a href="#">Cart</a>
+            <a href="clothing.html">Clothing guide</a>
+        </nav>
+
+        <h2 class="heading-title">Dashboard</h2>
+
+        <div class="main-content">
+			<!-- Tasks Section -->
+<div class="section tasks">
+    <h3>Tasks</h3>
+    <div class="task-list">
+        <div class="task-item">
+            <span class="task-icon">📝</span>
+            <p>Approve pending orders.</p>
+        </div>
+        <div class="task-item">
+            <span class="task-icon">📦</span>
+            <p>Check inventory updates.</p>
+        </div>
+        <div class="task-item">
+            <span class="task-icon">📅</span>
+            <p>Prepare for upcoming sales event.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Notifications Section -->
+<div class="section notifications">
+    <h3>Notifications</h3>
+    <div class="notification-list">
+        <div class="notification-item">
+            <span class="notification-icon">⚙️</span>
+            <p>System maintenance scheduled for Friday at 10 PM.</p>
+        </div>
+        <div class="notification-item">
+            <span class="notification-icon">🛍️</span>
+            <p>New products added to the catalog.</p>
+        </div>
+        <div class="notification-item">
+            <span class="notification-icon">📣</span>
+            <p>Customer feedback pending review.</p>
+        </div>
+    </div>
+</div>
+
+
+
+			<!-- Trending Deals Section -->
+			<div class="section trending-deals">
+				<h3>Trending Deals</h3>
+				<div class="deal-cards">
+					<div class="deal-card">
+						<p>Flat 30% off on summer dresses.</p>
+					</div>
+					<div class="deal-card">
+						<p>Buy one, get one free on casual wear.</p>
+					</div>
+					<div class="deal-card">
+						<p>Exclusive discounts on party gowns this weekend.</p>
+					</div>
+					<div class="deal-card">
+						<p>Up to 50% off on designer kurtas and sarees.</p>
+					</div>
+					<div class="deal-card">
+						<p>Free accessories with selected ethnic wear.</p>
+					</div>
+				</div>
+			</div>
+
+
+            <!-- Feedback Section -->
+            <div class="section contact-box" id="contact">
+				<h3>FeedBack</h3>
+				<form class="contact-form box">
+				<fieldset >
+					<input type="text" class="form-input" placeholder="Your Name" required>
+					<input type="email" class="form-input" placeholder="Your Email" required>
+					<textarea class="form-input" placeholder="Leave your feedback here...." rows="4" required></textarea>
+					<button type="submit" class="submit-button">Submit</button>
+				</fieldset>
+				</form>
+			</div>
+
+        </div>
+    </div>
+
+</body>
+</html>

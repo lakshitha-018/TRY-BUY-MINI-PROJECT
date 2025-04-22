@@ -1,0 +1,18 @@
+.clothing-gallery {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.clothing-gallery img {
+    width: 200px;
+    height: 300px;
+    border: 2px solid #d4af37;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.clothing-gallery img:hover {
+    transform: scale(1.05);
+}

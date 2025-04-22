@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Try and Buy Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f0f5;
+            color: #333;
+        }
+
+        .container {
+            margin: 0 auto;
+        }
+
+        header {
+            background-color: black;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            width: 96.3vw;
+            left: 0;
+            right: 0;
+            margin: 0;
+        }
+
+        .heading-title {
+            font-size: 40px;
+            margin: 20px 0;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            color: #ecf0f1;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: center;
+            background-color: #c0392b;
+            padding: 10px 0;
+            width: 100%;
+        }
+
+        .navbar a {
+            color: #ecf0f1;
+            text-decoration: none;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            margin: 0 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            background-color: black;
+        }
+
+        .shopping-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            padding: 20px;
+            width: 90%;
+            max-width: 2000px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+			margin-left: 80px;
+        }
+
+        .shopping-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #fdfdfd;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 15px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            width: 200px;
+        }
+
+        .shopping-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .item-image {
+            width: 180px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .item-price {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .size-select {
+            margin-bottom: 10px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .add-to-cart {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .add-to-cart:hover {
+            background-color: #1d70a2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Try & Buy</h1>
+        </header>
+
+        <nav class="navbar">
+            <a href="Home.html">Home</a>
+            <a href="western.html">Western</a>
+            <a href="traditional.html">Traditional</a>
+            <a href="shopping_cart.html">Shopping</a>
+            <a href="cart.html">Cart</a>
+            <a href="clothing.html">Clothing guide</a>
+        </nav>
+
+        <h2 class="heading-title">Shopping</h2>
+        <section class="main-content">
+            <div class="shopping-container">
+                <div class="shopping-item">
+                    <img src="https://www.atun.in/wp-content/uploads/2023/02/Lime-Green-4-570x760.jpg" alt="Item 1" class="item-image">
+                    <p class="item-price">₹499</p>
+                    <select class="size-select">
+                        <option value="XS">XS</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                    </select>
+                    <button class="add-to-cart" onclick="addToCart('Lime Green Shirt', '₹499', 'https:\/\/www.atun.in\/wp-content\/uploads\/2023\/02\/Lime-Green-4-570x760.jpg')">Add to Cart</button>
+                </div>
+
+                <div class="shopping-item">
+                    <img src="https://5.imimg.com/data5/SELLER/Default/2022/12/PU/ZB/WU/181659218/women-casual-shirt-500x500.jpeg" alt="Item 2" class="item-image">
+                    <p class="item-price">₹999</p>
+                    <select class="size-select">
+                        <option value="XS">XS</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                    </select>
+                    <button class="add-to-cart" onclick="addToCart('Women Casual Shirt', '₹999', 'https:\/\/5.imimg.com\/data5\/SELLER\/Default\/2022\/12\/PU\/ZB\/WU\/181659218\/women-casual-shirt-500x500.jpeg')">Add to Cart</button>
+                </div>
+                <div class="shopping-item">
+                    <img src="https://10d06a4d12b851f1b2d5-6729d756a2f36342416a9128f1759751.lmsin.net/1000010736186-Purple-MAUVE-1000010736186-8122021_01-1200.jpg" alt="Item 3" class="item-image">
+                    <p class="item-price">₹799</p>
+                    <select class="size-select">
+                        <option value="XS">XS</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                    </select>
+                    <button class="add-to-cart" onclick="addToCart('Purple Mauve Shirt', '₹799', 'https:\/\/10d06a4d12b851f1b2d5-6729d756a2f36342416a9128f1759751.lmsin.net\/1000010736186-Purple-MAUVE-1000010736186-8122021_01-1200.jpg')">Add to Cart</button>
+                </div>
+                <div class="shopping-item">
+                    <img src="https://m.media-amazon.com/images/I/71Dn5UXWuJL._AC_UY1100_.jpg" alt="Item 3" class="item-image">
+                    <p class="item-price">₹899</p>
+                    <select class="size-select">
+                        <option value="XS">XS</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                    </select>
+                    <button class="add-to-cart" onclick="addToCart('Item Name', '₹899')">Add to Cart</button>
+                </div>
+                <div class="shopping-item">
+                    <img src="https://m.media-amazon.com/images/I/71JcnIeLd5L._AC_SX425_.jpg" alt="Item 1" class="item-image">
+                    <p class="item-price">₹999</p>
+                    <select class="size-select">
+                        <option value="XS">XS</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                    </select>
+                    <button class="add-to-cart" onclick="addToCart('Black Puff Sleeve Fit & Flare Mini Dress', '₹999', 'https:\/\/m.media-amazon.com\/images\/I\/71JcnIeLd5L._AC_SX425_.jpg')">Add to Cart</button>
+                </div>
+                <div class="shopping-item">
+                    <img src="https://assets.ajio.com/medias/sys_master/root/20231219/BCi0/6580ef63ddf7791519d7f8f8/-473Wx593H-466869058-maroon-MODEL5.jpg" alt="Item 2" class="item-image">
+                    <p class="item-price">₹899</p>
+                    <select class="size-select">
+                        <option value="XS">XS</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                    </select>
+                    <button class="add-to-cart" onclick="addToCart('Maroon Dress', '₹899', 'https:\/\/assets.ajio.com\/medias\/sys_master\/root\/20231219\/BCi0\/6580ef63ddf7791519d7f8f8\/-473Wx593H-466869058-maroon-MODEL5.jpg')">Add to Cart</button>
+                </div>
+                <div class="shopping-item">
+                    <img src="https://www.sairasboutique.net/cdn/shop/files/ShimmerPeacockBlackDesignerEmbroideredSilkWeddingPartyWearSaree-Saira_sBoutique_1.jpg?v=1725210196" alt="Item 3" class="item-image">
+                    <p class="item-price">₹2000</p>
+                    <select class="size-select">
+                        <option value="XS">XS</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                    </select>
+                    <button class="add-to-cart" onclick="addToCart('Designer Embroidered Silk Saree', '₹2000', 'https:\/\/www.sairasboutique.net\/cdn\/shop\/files\/ShimmerPeacockBlackDesignerEmbroideredSilkWeddingPartyWearSaree-Saira_sBoutique_1.jpg?v=1725210196')">Add to Cart</button>
+                </div>
+                <div class="shopping-item">
+                    <img src="https://www.anantexports.in/cdn/shop/files/appealing-fancy-fabric-handwork-pink-trendy-saree-265881-900x_1_900x.jpg?v=1716737475" alt="Item 4" class="item-image">
+                    <p class="item-price">₹3000</p>
+                    <select class="size-select">
+                        <option value="XS">XS</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                    </select>
+                    <button class="add-to-cart" onclick="addToCart('Trendy Pink Saree', '₹3000', 'https:\/\/www.anantexports.in\/cdn\/shop\/files\/appealing-fancy-fabric-handwork-pink-trendy-saree-265881-900x_1_900x.jpg?v=1716737475')">Add to Cart</button>
+                </div>
+                <div class="shopping-item">
+                    <img src="https://www.karagiri.com/cdn/shop/files/KINKHAB-1205-1.jpg?v=1711452218" alt="Item 5" class="item-image">
+                    <p class="item-price">₹1500</p>
+                    <select class="size-select">
+                        <option value="XS">XS</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                    </select>
+                    <button class="add-to-cart" onclick="addToCart('Kinkhab Saree', '₹1500', 'https:\/\/www.karagiri.com\/cdn\/shop\/files\/KINKHAB-1205-1.jpg?v=1711452218')">Add to Cart</button>
+                </div>
+                <div class="shopping-item">
+                    <img src="https://www.vastranand.in/cdn/shop/files/1_e454541e-d62c-4cba-b634-466d2b888180.jpg?v=1723192917" alt="Item 6" class="item-image">
+                    <p class="item-price">₹5000</p>
+                    <select class="size-select">
+                        <option value="XS">XS</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                    </select>
+                    <button class="add-to-cart" onclick="addToCart('Fancy Fabric Saree', '₹5000', 'https:\/\/www.vastranand.in\/cdn\/shop\/files\/1_e454541e-d62c-4cba-b634-466d2b888180.jpg?v=1723192917')">Add to Cart</button>
+                </div>
+                <div class="shopping-item">
+                    <img src="https://pratapsons.com/cdn/shop/files/1_a8ba5c2f-6997-455c-919d-31cbe69860bb.jpg?v=1695727535&width=2048" alt="Item 7" class="item-image">
+                    <p class="item-price">₹1800</p>
+                    <select class="size-select">
+                        <option value="XS">XS</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                    </select>
+                    <button class="add-to-cart" onclick="addToCart('Embroidered Designer Lehenga', '₹1800', 'https:\/\/pratapsons.com\/cdn\/shop\/files\/1_a8ba5c2f-6997-455c-919d-31cbe69860bb.jpg?v=1695727535&width=2048')">Add to Cart</button>
+                </div>
+                <div class="shopping-item">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSg8mSOcvZ8KlGo1NySBjgABOxg8ZiO1sSaQ&s" alt="Item 8" class="item-image">
+                    <p class="item-price">₹2500</p>
+                    <select class="size-select">
+                        <option value="XS">XS</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                    </select>
+                    <button class="add-to-cart" onclick="addToCart('Stylish Sandals', '₹2500', 'https:\/\/encrypted-tbn0.gstatic.com\/images?q=tbn:ANd9GcSSg8mSOcvZ8KlGo1NySBjgABOxg8ZiO1sSaQ&s')">Add to Cart</button>
+                </div>
+                <div class="shopping-item">
+                    <img src="https://royalanarkali.com/wp-content/uploads/2024/07/Artful-Rani-Color-Georgette-Embroidery-Sequence-Lehenga-Choli-2-1-scaled.jpeg" alt="Item 9" class="item-image">
+                    <p class="item-price">₹9000</p>
+                    <select class="size-select">
+                        <option value="XS">XS</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                    </select>
+                    <button class="add-to-cart" onclick="addToCart('Georgette Lehenga Choli', '₹9000', 'https:\/\/royalanarkali.com\/wp-content\/uploads\/2024\/07\/Artful-Rani-Color-Georgette-Embroidery-Sequence-Lehenga-Choli-2-1-scaled.jpeg')">Add to Cart</button>
+                </div>
+                <div class="shopping-item">
+                    <img src="https://media.shopkund.com/media/catalog/product/cache/9b8fb9a78b48ba20857a65111a93b65e/a/c/acw2189-1-embroidered-net-party-lehenga-choli-in-teal-blue-lc6454_1_.jpg" alt="Item 10" class="item-image">
+                    <p class="item-price">₹3000</p>
+                    <select class="size-select">
+                        <option value="XS">XS</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                    </select>
+                    <button class="add-to-cart" onclick="addToCart('Embroidered Net Party Lehenga', '₹3000', 'https:\/\/media.shopkund.com\/media\/catalog\/product\/cache\/9b8fb9a78b48ba20857a65111a93b65e\/a\/c\/acw2189-1-embroidered-net-party-lehenga-choli-in-teal-blue-lc6454_1_.jpg')">Add to Cart</button>
+                </div>
+                <div class="shopping-item">
+                    <img src="https://cdn.rajwadi.com/image/cache/data-2024/chiffon-black-embroidered-designer-lehenga-choli-56268-800x1100.jpg" alt="Item 11" class="item-image">
+                    <p class="item-price">₹3999</p>
+                    <select class="size-select">
+                        <option value="XS">XS</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                    </select>
+                    <button class="add-to-cart" onclick="addToCart('Chiffon Black Embroidered Lehenga', '₹3999', 'https:\/\/cdn.rajwadi.com\/image\/cache\/data-2024\/chiffon-black-embroidered-designer-lehenga-choli-56268-800x1100.jpg')">Add to Cart</button>
+                </div>
+                <div class="shopping-item">
+                    <img src="https://assets.myntassets.com/w_412,q_60,dpr_2,fl_progressive/assets/images/26461148/2023/12/16/7e12940c-cd7b-4a8d-b955-0830c5b1d82d1702715459552AAHWANBlackPuffSleeveFitFlareMiniDress1.jpg" alt="Item 12" class="item-image">
+                    <p class="item-price">₹1500</p>
+                    <select class="size-select">
+                        <option value="XS">XS</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                    </select>
+                    <button class="add-to-cart" onclick="addToCart('Black Puff Sleeve Fit & Flare Mini Dress', '₹1500', 'https:\/\/assets.myntassets.com\/w_412,q_60,dpr_2,fl_progressive\/assets\/images\/26461148\/2023\/12\/16\/7e12940c-cd7b-4a8d-b955-0830c5b1d82d1702715459552AAHWANBlackPuffSleeveFitFlareMiniDress1.jpg')">Add to Cart</button>
+                </div>
+                <div class="shopping-item">
+                    <img src="https://www.globaldesi.in/dw/image/v2/BGCX_PRD/on/demandware.static/-/Sites-masterCatalog_GD/default/dw1feed87b/images/hires/S23/GD-SS24GA043DRCAM-GREEN-(4).jpg?sw=1300&sh=1950&sm=fit" alt="Item 13" class="item-image">
+                    <p class="item-price">₹799</p>
+                    <select class="size-select">
+                        <option value="XS">XS</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                    </select>
+                    <button class="add-to-cart" onclick="addToCart('Green Dress', '₹799', 'https:\/\/www.globaldesi.in\/dw\/image\/v2\/BGCX_PRD\/on\/demandware.static\/-\/Sites-masterCatalog_GD\/default\/dw1feed87b\/images\/hires\/S23\/GD-SS24GA043DRCAM-GREEN-(4).jpg?sw=1300&sh=1950&sm=fit')">Add to Cart</button>
+                </div>
+                <div class="shopping-item">
+                    <img src="https://azrakh.com/cdn/shop/products/WhatsAppImage2023-04-03at12.07.34_1.jpg?v=1680506614" alt="Item 14" class="item-image">
+                    <p class="item-price">₹1000</p>
+                    <select class="size-select">
+                        <option value="XS">XS</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                    </select>
+                    <button class="add-to-cart" onclick="addToCart('Casual Wear', '₹1000', 'https:\/\/azrakh.com\/cdn\/shop\/products\/WhatsAppImage2023-04-03at12.07.34_1.jpg?v=1680506614')">Add to Cart</button>
+                </div>
+                <div class="shopping-item">
+                    <img src="https://5.imimg.com/data5/SELLER/Default/2023/3/291921090/IG/OY/FA/182365761/women-s-high-heel-sandals-500x500.jpg" alt="Item 15" class="item-image">
+                    <p class="item-price">₹2000</p>
+                    <select class="size-select">
+                        <option value="XS">XS</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                    </select>
+                    <button class="add-to-cart" onclick="addToCart('High Heel Sandals', '₹2000', 'https:\/\/5.imimg.com\/data5\/SELLER\/Default\/2023\/3\/291921090\/IG\/OY\/FA\/182365761\/women-s-high-heel-sandals-500x500.jpg')">Add to Cart</button>
+                </div>
+                <div class="shopping-item">
+                    <img src="https://i.pinimg.com/222x/e0/a0/51/e0a051d6a37a6190f0cbe81f66f923b9.jpg" alt="Item 16" class="item-image">
+                    <p class="item-price">₹3000</p>
+                    <select class="size-select">
+                        <option value="XS">XS</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                    </select>
+                    <button class="add-to-cart" onclick="addToCart('Stylish Dress', '₹3000', 'https:\/\/i.pinimg.com\/222x\/e0\/a0\/51\/e0a051d6a37a6190f0cbe81f66f923b9.jpg')">Add to Cart</button>
+                </div>
+                <div class="shopping-item">
+                    <img src="https://down-id.img.susercontent.com/file/035a142258f7299893383bab60708f3c" alt="Item 17" class="item-image">
+                    <p class="item-price">₹1500</p>
+                    <select class="size-select">
+                        <option value="XS">XS</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                    </select>
+                    <button class="add-to-cart" onclick="addToCart('Casual Top', '₹1500', 'https:\/\/down-id.img.susercontent.com\/file\/035a142258f7299893383bab60708f3c')">Add to Cart</button>
+                </div>
+                <div class="shopping-item">
+                    <img src="https://images.meesho.com/images/products/398392394/qzn3v_512.webp" alt="Item 18" class="item-image">
+                    <p class="item-price">₹2000</p>
+                    <select class="size-select">
+                        <option value="XS">XS</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                    </select>
+                    <button class="add-to-cart" onclick="addToCart('Trendy Outfit', '₹2000', 'https:\/\/images.meesho.com\/images\/products\/398392394\/qzn3v_512.webp')">Add to Cart</button>
+                </div>
+                <div class="shopping-item">
+                    <img src="https://images.meesho.com/images/products/79060532/ewlbz_512.webp" alt="Item 19" class="item-image">
+                    <p class="item-price">₹1500</p>
+                    <select class="size-select">
+                        <option value="XS">XS</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                    </select>
+                    <button class="add-to-cart" onclick="addToCart('Elegant Dress', '₹1500', 'https:\/\/images.meesho.com\/images\/products\/79060532\/ewlbz_512.webp')">Add to Cart</button>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+<script>
+    function addToCart(itemName, itemPrice, itemImage) {
+        // Create an item object
+        const item = {
+            name: itemName,
+            price: itemPrice,
+            image: itemImage
+        };
+
+        // Get the current cart from local storage or initialize it
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        // Add the new item to the cart
+        cart.push(item);
+
+        // Save the updated cart back to local storage
+        localStorage.setItem('cart', JSON.stringify(cart));
+
+        // Optionally, alert the user
+        alert(`${itemName} has been added to your cart!`);
+    }
+</script>
+</html>

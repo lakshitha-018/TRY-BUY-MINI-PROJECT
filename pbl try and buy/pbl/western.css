@@ -1,0 +1,179 @@
+/* Global Body Styles */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #ff7e5f, #feb47b); /* Gradient from pink to orange */
+    color: #fff; /* White text for contrast */
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+header {
+    text-align: center;
+    padding: 50px;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark semi-transparent background */
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.25rem;
+}
+
+/* Upload Section */
+.upload-section {
+    text-align: center;
+    margin: 20px;
+}
+
+#user-photo {
+    width: auto;
+    max-width: 80%;
+    max-height: 500px;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Catalog Section */
+.catalog-section {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 20px;
+}
+
+.catalog-section .item {
+    text-align: center;
+    margin: 15px;
+}
+
+.catalog-section img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.catalog-section img:hover {
+    transform: scale(1.1);
+}
+
+.try-on-btn {
+    padding: 10px 20px;
+    background-color: #ff6f61;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.try-on-btn:hover {
+    background-color: #e94e42;
+}
+
+/* Canvas Styling */
+canvas {
+    max-width: 80%;
+    max-height: 500px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+/* Download Button */
+#download-btn {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 5px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+}
+
+#download-btn:hover {
+    background-color: #218838;
+}
+/* Styling for catalog section */
+.catalog-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+/* Catalog section with responsive design */
+.catalog-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Styling for each catalog item */
+.catalog-section .item {
+    text-align: center;
+    width: 250px;  /* Increase width to accommodate larger images */
+    height: auto;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    overflow: hidden;
+}
+
+/* Adjusting the images to fit their container */
+.catalog-section .item img {
+    width: 100%;  /* Ensure the image takes full width of the container */
+    height: auto; /* Maintain the image's aspect ratio */
+    max-height: 350px; /* Set a max height to avoid overly tall images */
+    object-fit: contain; /* Ensure the entire image fits within the container */
+    border-bottom: 2px solid #ccc;
+}
+
+/* Styling for the buttons */
+.catalog-section .item button {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.catalog-section .item button:hover {
+    background-color: #45a049;
+}
+.slider-container {
+    margin: 10px 0;
+    text-align: center;
+}
+
+.slider-container label {
+    font-size: 1rem;
+    margin-right: 10px;
+    color: white;
+}
+
+.slider-container input[type="range"] {
+    width: 200px;
+    cursor: pointer;
+}
